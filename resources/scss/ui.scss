@@ -1,0 +1,203 @@
+@import "base";
+
+@import "~foundation-sites/scss/foundation";
+@import "~foundation-sites/scss/xy-grid/classes";
+
+//@include foundation-xy-grid-classes(
+//    $base-grid     : true,
+//    $margin-grid   : true,
+//    $padding-grid  : true,
+//    $block-grid    : true,
+//    $collapse      : true,
+//    $offset        : true,
+//    $vertical-grid : true,
+//    $frame-grid    : true
+//);
+
+
+.#{$prefix}-layout {
+    $self          : &;
+    display        : flex;
+    flex-direction : column;
+    width          : 100%;
+    min-width      : 100%;
+    min-height     : 100vh;
+    position       : absolute;
+
+    &__header,
+    &__footer {
+        display        : flex;
+        flex-direction : row;
+        width          : 100%;
+        white-space    : nowrap;
+
+        &-item {
+            padding     : 0 10px;
+            height      : inherit;
+            line-height : inherit;
+
+            &--separator {
+                width      : 1px;
+                background : #607D8B;
+            }
+
+            &--spacer {
+                flex : 1 1 auto;
+            }
+        }
+    }
+
+    &__header {
+        background : var(--layout-header-background);
+        background : var(--layout-header-background);
+        color      : var(--layout-header-font-color);
+        height     : var(--layout-header-height);
+
+        &-item {
+            padding     : 0 10px;
+            height      : var(--layout-header-height);
+            line-height : var(--layout-header-height);
+        }
+        a {
+            color : var(--layout-header-font-color);
+
+            &:hover { color : var(--layout-header-hover-font-color); }
+        }
+    }
+
+    &__main {
+        display        : flex;
+        flex-direction : row;
+        flex           : 1 0 auto;
+    }
+
+    &__content {
+        flex  : 1 0 0;
+        order : 1;
+
+        #buttons {
+
+            float    : right;
+            position : absolute;
+            right    : 0;
+            margin   : 5px;
+        }
+    }
+
+
+    &__content-top {
+        display          : flex;
+        flex-direction   : row;
+        padding          : 0.75rem 1rem;
+        margin-bottom    : 1rem;
+        list-style       : none;
+        background-color : #EAECED;
+    }
+
+    &__buttons {}
+    &__breadcrumbs {
+        &.el-breadcrumb {
+            line-height : 20px;
+        }
+    }
+
+    &__inner {
+
+    }
+    &__sidebar {
+        width      : var(--layout-sidebar-width);
+        order      : 0;
+        background : var(--layout-sidebar-background);
+        color      : var(--layout-sidebar-font-color);
+        //height     : 100%;
+        height     : auto;
+        overflow-x : hidden !important;
+
+        &.is-collapsed {
+            width : var(--layout-sidebar-collapse-width);
+            @include b(menu) {
+                @include m(collapse) {
+                    width : var(--layout-sidebar-collapse-width);
+                }
+            }
+        }
+
+        &__footer {
+            background  : var(--layout-footer-background);
+            color       : var(--layout-footer-font-color);
+            //border-top     : var(--layout-footer-border-top);
+            height      : var(--layout-footer-height);
+            line-height : var(--layout-footer-height);
+
+            .el-menu.el-menu--horizontal {
+                > .el-submenu .el-submenu__title,
+                > .el-menu-item {
+                    height : var(--layout-footer-height);
+                    color  : var(--layout-footer-font-color);
+
+                    i { color : var(--layout-footer-font-color); }
+
+                    &:hover {
+                        color      : var(--layout-footer-hover-font-color);
+                        background : var(--layout-footer-hover-background);
+                    }
+                }
+
+            }
+        }
+    }
+}
+    //
+    //@include b(body) {
+    //    display        : flex;
+    //    flex-direction : row;
+    //    background     : url(/vendor/streams/ui/img/bg.jpg);
+    //    min-height     : 100vh;
+    //}
+    //
+    //@include b(container) {
+    //    @include xy-grid();
+    //}
+    //
+    //@include e(header) {
+    //    @include xy-cell();
+    //}
+    //
+    //@include e(content) {
+    //    @include xy-cell(1 of 10);
+    //}
+    //
+    //@include e(sidebar-1) {
+    //    order : -1;
+    //}
+    //
+    //@include e(nav) {
+    //    order         : -1;
+    //    padding       : 1em;
+    //    border-radius : 3px;
+    //    background    : rgba(147, 128, 108, 0.1);
+    //}
+    //
+    //@include e(ads) {
+    //    padding       : 1em;
+    //    border-radius : 3px;
+    //    background    : rgba(147, 128, 108, 0.1);
+    //}
+    //
+    //@include e(header) {
+    //    flex : none;
+    //}
+    //
+    //@include e(footer) {
+    //    flex : none;
+    //}
+    //
+    //
+    //@media (min-width : 768px) {
+    //    @include e(hg) {
+    //        flex-direction : row;
+    //    }
+    //    @include e(hg-sidebar) {
+    //        flex : 0 0 260px;
+    //    }
+    //}

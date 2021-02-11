@@ -1,4 +1,4 @@
-@extends('ui::cp/cp')
+ @extends('ui::cp/cp')
 
 @section('content')
 {!! $content !!}

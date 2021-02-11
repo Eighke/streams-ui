@@ -1,3 +1,4 @@
+@import "base";
 :root {
 
     /** ---------------------------
@@ -5,10 +6,10 @@
      --------------------------- */
     --cp-spacing: 1;
     --cp-radius: 1;
-    
+
     --cp-color-light: #efefef;
     --cp-color-dark: #151515;
-    
+
     --cp-color-primary: #4e42d9;
     --cp-color-secondary: #cccccc;
 
@@ -24,7 +25,7 @@
     --cp-color-yellow: #F59E0B;
     --cp-color-green: #10B981;
     --cp-color-blue: #3B82F6;
-    
+
     --cp-screen-sm: 640px;
     --cp-screen-md: 768px;
     --cp-screen-lg: 1024px;
@@ -35,3 +36,4 @@
     --cp-font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
     --cp-font-mono: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
+

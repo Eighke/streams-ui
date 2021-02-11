@@ -1,0 +1,41 @@
+
+@mixin color-text-classes($prefix: text-,$colors: $material-colors) {
+    @each $color-name, $color-variants in $colors {
+        @each $color-variant, $hex-value in $color-variants {
+            .#{$prefix}#{$color-name}-#{$color-variant} {
+                color : #{$hex-value} !important;
+            }
+        }
+    }
+}
+
+////
+///
+@mixin color-background-classes($prefix: bg-,$colors: $material-colors) {
+    @each $color-name, $color-variants in $colors {
+        @each $color-variant, $hex-value in $color-variants {
+            .#{$prefix}#{$color-name}-#{$color-variant} {
+                background-color : #{$hex-value} !important;
+            }
+        }
+    }
+}
+
+
+@mixin color-classes($text-prefix: text-, $background-prefix: bg-, $colors: $material-colors) {
+    @include color-text-classes($text-prefix, $colors);
+    @include color-background-classes($background-prefix, $colors);
+}
+
+@mixin create-color-placeholders($colors: $material-colors){
+    @each $color-name, $color-variants in $colors {
+        @each $color-variant, $hex-value in $color-variants {
+            %color-#{$color-name}-#{$color-variant} {
+                color: #{$hex-value}
+            }
+            %bg-color-#{$color-name}-#{$color-variant} {
+                background-color: #{$hex-value}
+            }
+        }
+    }
+}

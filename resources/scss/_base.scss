@@ -1,0 +1,12 @@
+////
+/// This is the base SSCS file that can be included anywhere, anytime. No styles printed
+/// @group Base
+/// @author Robin Radic
+////
+
+@import "variables/bem-variables";
+@import "functions/bem-functions";
+@import "mixins/bem-mixins";
+
+@import "variables/material-variables";
+@import "mixins/color-mixins";

@@ -1,0 +1,5 @@
+dest    docs/sassdoc
+package ./package.json
+theme   default
+verbose true
+strict strue
